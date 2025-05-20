@@ -6,14 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CRUD_PRUEBA.Models;
+using CRUD_PRUEBA.Data;
 
 namespace CRUD_PRUEBA.Controllers
 {
     public class EmpleadosController : Controller
     {
-        private readonly CrudPruebaContext _context;
+        private readonly AppDbContext _context;
 
-        public EmpleadosController(CrudPruebaContext context)
+        public EmpleadosController(AppDbContext context)
         {
             _context = context;
         }

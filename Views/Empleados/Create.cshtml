@@ -1,7 +1,7 @@
 ﻿@model CRUD_PRUEBA.Models.Empleado
 
 @{
-    ViewData["Title"] = "Editar Empleado";
+    ViewData["Title"] = "Crear Empleado";
 }
 
 <div class="container mt-5">
@@ -9,10 +9,10 @@
         <div class="col-md-6">
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Editar Información del Empleado</h4>
+                    <h4 class="mb-0">Agregar Información del Empleado</h4>
                 </div>
                 <div class="card-body">
-                    <form asp-action="Edit">
+                    <form asp-action="Create" method="post">
                         <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
                         <div class="form-group mb-3">
@@ -21,7 +21,11 @@
                             <span asp-validation-for="Nombre" class="text-danger"></span>
                         </div>
 
-                        <input type="hidden" asp-for="Nue" />
+                        <div class="form-group mb-3">
+                            <label asp-for="Nue" class="form-label"></label>
+                            <input asp-for="Nue" class="form-control" required placeholder="Ingrese el NUE" />
+                            <span asp-validation-for="Nue" class="text-danger"></span>
+                        </div>
 
                         <div class="form-group mb-3">
                             <label asp-for="Correo" class="form-label"></label>

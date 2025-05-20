@@ -1,4 +1,4 @@
-using CRUD_PRUEBA.Models;
+using CRUD_PRUEBA.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,8 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<CrudPruebaContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("conexion")));
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Registrar el contexto con Pomelo y la cadena desde configuración
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 var app = builder.Build();
 

@@ -5,9 +5,9 @@ namespace CRUD_PRUEBA.Models;
 
 public partial class Empleado
 {
-    public string? Nombre { get; set; }
-
     public string Nue { get; set; } = null!;
+
+    public string? Nombre { get; set; }
 
     public string? Correo { get; set; }
 
