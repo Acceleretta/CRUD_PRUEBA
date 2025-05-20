@@ -1,36 +1,49 @@
 ﻿@model CRUD_PRUEBA.Models.Empleado
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles del Empleado";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">Detalles del Empleado</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </dt>
+                        <dd class="col-sm-8">
+                            <span class="fw-semibold">@Html.DisplayFor(model => model.Nombre)</span>
+                        </dd>
 
-<div>
-    <h4>Empleado</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Correo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Correo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Puesto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Puesto)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Nue">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.Correo)
+                        </dt>
+                        <dd class="col-sm-8">
+                            <span class="fw-semibold">@Html.DisplayFor(model => model.Correo)</span>
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.Puesto)
+                        </dt>
+                        <dd class="col-sm-8">
+                            <span class="fw-semibold">@Html.DisplayFor(model => model.Puesto)</span>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-action="Edit" asp-route-id="@Model?.Nue" class="btn btn-sm btn-outline-primary me-2">
+                        ✏️ Editar
+                    </a>
+                    <a asp-action="Index" class="btn btn-sm btn-outline-secondary">
+                        ← Volver a la lista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

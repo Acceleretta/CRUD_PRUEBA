@@ -2,7 +2,71 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@section Styles {
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        .landing-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+        }
+
+        .profile-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+            .profile-card h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+
+            .profile-card p {
+                font-size: 1rem;
+                color: #555;
+                margin-bottom: 1.5rem;
+            }
+
+        .social-icons a {
+            font-size: 1.8rem;
+            color: #555;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+            .social-icons a:hover {
+                color: #007bff;
+            }
+
+        .material-icons.md-36 {
+            font-size: 36px;
+        }
+    </style>
+}
+
+<div class="landing-wrapper">
+    <div class="profile-card">
+        <h1>Hola, soy Gustavo León</h1>
+        <p>Desarrollador apasionado por la tecnología y la innovación. Aquí puedes encontrar más sobre mí y mis proyectos.</p>
+
+        <div class="social-icons">
+            <a href="https://github.com/Acceleretta" target="_blank" title="GitHub">
+                <span class="material-icons md-36">code</span>
+            </a>
+            <a href="https://www.linkedin.com/in/gustavo-le%C3%B3n-landeros/" target="_blank" title="LinkedIn">
+                <span class="material-icons md-36">business_center</span>
+            </a>
+            <a href="mailto:g.leonlanderos@gmail.com" title="Correo">
+                <span class="material-icons md-36">email</span>
+            </a>
+        </div>
+    </div>
 </div>
